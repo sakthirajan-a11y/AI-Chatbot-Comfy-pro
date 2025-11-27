@@ -55,7 +55,7 @@ export default function Home() {
     formData.append("userId", user?.id || userId);
   
     try {
-      const res = await fetch("/api/upload", {
+      const res = await fetch("/api/upload/", {
         method: "POST",
         body: formData,
       });
@@ -315,8 +315,8 @@ export default function Home() {
               <MessageCircle className="w-12 h-12 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-white">Comfy</h1>
-          <p className="text-xl text-gray-400">your AI companion</p>
+          <h1 className="text-4xl font-bold text-white">Comfy by Instapreps AI</h1>
+          <p className="text-xl text-gray-400">your confidence companion</p>
           <p className="text-lg text-gray-300">How do you feel today?</p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {MOODS.map(m => (
@@ -412,7 +412,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <MessageCircle className="w-5 h-5 text-purple-400" />
-              <h1 className="text-lg font-semibold text-white">Comfy • {currentChat?.mood || selectedMood || "Unknown Mood"}</h1>
+              <h1 className="text-lg font-semibold text-white">Comfy by Instapreps AI • {currentChat?.mood || selectedMood || "Unknown Mood"}</h1>
             </div>
 
             {/* TOP-RIGHT: LOGIN / USER */}
