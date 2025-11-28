@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 Comfy Pro – AI Emotional Support & Productivity Chatbot
 
-## Getting Started
+AI-driven companion for students with mood-based conversations, memory, and persistent chat history.
+Built using Next.js 14, Clerk Auth, Groq LLaMA, Prisma, Supabase, TailwindCSS.
 
-First, run the development server:
+✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🧠 Mood-based conversational AI (5 emotional states)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+⚡ Ultra-fast streaming responses using Groq LLaMA 3.3
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔒 Authentication with Clerk (login/sign-up + user profile)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💾 Persistent chat history for logged-in users
 
-## Learn More
+👤 Guest mode support using local identifiers
 
-To learn more about Next.js, take a look at the following resources:
+📄 File upload support (PDFs, notes) — RAG ready
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🗂️ Sidebar with chat sessions & delete option
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🌓 Modern UI built with TailwindCSS + shadcn/ui
 
-## Deploy on Vercel
+📱 Fully responsive design (mobile-friendly)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🚀 Deployed on Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+📦 Project Structure
+/src
+ ├── app
+ │   ├── api
+ │   │   ├── chat/route.ts
+ │   │   ├── upload/route.ts
+ │   │   ├── history/route.ts
+ │   │   ├── load-chat/route.ts
+ │   │   ├── delete-chat/route.ts
+ │   │   └── view-chats/route.ts
+ │   ├── sign-in
+ │   ├── sign-up
+ │   └── page.tsx         # Main chatbot UI
+ ├── components/ui        # Reusable UI elements
+ ├── lib/prisma.ts
+ └── middleware.ts         # Clerk middleware
+
+
+⚙️ Environment Variables
+
+Create .env.local:
+
+# Clerk Auth
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-key-here
+CLERK_SECRET_KEY=your-secret-key-here
+
+# Database
+DATABASE_URL=your-supabase-postgres-url
+
+# Groq API
+GROQ_API_KEY=your-groq-api-key
+
+
+🚀 Deployment
+
+Deployed on Vercel.
+Every git push to main triggers a new deployment.
+
+
+🧩 Future Enhancements
+
+Full RAG pipeline (PDF → embeddings → vector search)
+
+Pinecone or Supabase Vector integration
+
+AI personas (Study Coach, Confidence Buddy, Focus Mode)
+
+Analytics dashboard for user insights
+
+Chat widget embeddable in any website
+
+
+✨ Author
+
+Sakthi Rajan
+AI Engineer
